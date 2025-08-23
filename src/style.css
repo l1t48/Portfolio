@@ -1,99 +1,34 @@
 @import "tailwindcss";
+@import 'hamburgers/dist/hamburgers.min.css';
 
+/* ================================
+   Default (Light Theme)
+   ================================ */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --color-primary: #f59e0b;        /* Primary accent color - gold, for buttons, highlights, or key actions */
+  --color-secondary: #a855f7;      /* Secondary accent - purple, for secondary buttons or UI elements */
+  --color-highlight: #22d3ee;      /* Highlight color - cyan, for links, hover states, or callouts */
+  --color-highlight-2: #84cc16;    /* Secondary highlight - lime green, for success indicators or subtle accents */
+  --color-background: #f9fafb;     /* Background - light gray, used for page background */
+  --color-surface: #ffffff;        /* Surface - pure white, used for cards, modals, or containers */
+  --color-text: #111827;           /* Text - very dark gray, for high contrast text on light backgrounds */
+  --color-nav: #e5e7eb;            /* Light Gray - navigation bar background */
+  --color-border-burger-menu: black;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 320px;
-  min-height: 100vh;
+/* ================================
+   Dark Theme
+   ================================ */
+.dark {
+  --color-primary: #c084fc;        /* Primary accent - purple, replaces gold in dark mode for softer contrast */
+  --color-secondary: #fbbf24;      /* Secondary accent - gold, reversed role for emphasis in dark theme */
+  --color-highlight: #bef264;      /* Highlight - lime green, pops against dark backgrounds */
+  --color-highlight-2: #2dd4bf;    /* Secondary highlight - cyan, still for links or hover states */
+  --color-background: #0f0f0f;     /* Background - almost black, main dark mode page background */
+  --color-surface: #1f1f1f;        /* Surface - dark gray, for cards, modals, or container elements */
+  --color-text: #f9fafb;           /* Text - almost white, for high contrast text on dark backgrounds */
+  --color-nav: #181818;            /* Slightly lighter black - for navigation bar background */
+  --color-border-burger-menu: white;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}

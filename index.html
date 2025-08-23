@@ -1,14 +1,68 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/src/style.css" rel="stylesheet">
-  </head>
-  <body>
-    <div>
-      <h1 class="bg-red-400">Hello World!</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/src/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-[var(--color-background)] text-[var(--color-text)]">
+  <div>
+    <div class="xl:w-full xl:h-20 bg-[var(--color-nav)] xl:p-7 xl:flex xl:items-center xl:justify-between xl:relative border-b-1 border-[var(--color-border-burger-menu)] xl:border-0">
+
+      <div class="xl:hidden w-full flex flex-row justify-between items-center" id="burgerMenu">
+        <div class="font-mono text-2xl text-[var(--color-text)] ml-5">
+          Adnan Hamdan
+        </div>
+        <button
+          class="p-3 w-15 text-lg text-[var(--color-border-burger-menu)]">
+          ☰
+        </button>
+
+      </div>
+
+      <nav id="sideMenu"
+        class="fixed top-0 right-0 h-full w-64 bg-[var(--color-nav)] shadow-lg z-50 transform translate-x-full transition-transform duration-300
+            xl:static xl:translate-x-0 xl:shadow-none xl:flex xl:space-x-4 xl:top-auto xl:right-auto xl:h-auto xl:w-auto font-sans text-xl">
+
+        <div class="xl:hidden flex items-center justify-end p-4 border-b border-gray-300">
+          <button id="closeMenu" class="text-xl font-bold text-[var(--color-border-burger-menu)]">X</button>
+        </div>
+
+        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:bg-[var(--color-highlight)]"
+          href="/">Hello world</a>
+        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:bg-[var(--color-highlight)]"
+          href="/">About</a>
+        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:bg-[var(--color-highlight)]"
+          href="/">Qqqqqqq</a>
+        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:bg-[var(--color-highlight)]"
+          href="/">Ppppppp</a>
+        <div class="xl:hidden p-4 bg-[var(--color-secondary)] border-2 --color-border-burger-menu" id="switcher-phone">
+
+        </div>
+      </nav>
+
+      <div id="overlay" class="hidden fixed inset-0 bg-black/50 z-40"></div>
+
+      <div
+        class="hidden xl:block xl:absolute xl:left-1/2 xl:transform xl:-translate-x-1/2 font-mono text-2xl xl:text-center">
+        Adnan Hamdan
+      </div>
+
+      <div class="hidden xl:block xl:p-3 text-xl bg-[var(--color-secondary)]" id="switcher-desktop">
+
+      </div>
     </div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+
+    <!-- 
+    <div id="footer" class="mt-1000">
+      Footer
+    </div> -->
+
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
