@@ -9,17 +9,15 @@
 
 <body class="bg-[var(--color-background)] text-[var(--color-text)]">
   <div>
-    <div class="xl:w-full xl:h-20 bg-[var(--color-nav)] xl:p-7 xl:flex xl:items-center xl:justify-between xl:relative border-b-1 border-[var(--color-border-burger-menu)] xl:border-0">
-
+    <div
+      class="xl:w-full xl:h-20 bg-[var(--color-nav)] xl:p-7 xl:flex xl:items-center xl:justify-between xl:relative border-b-1 border-[var(--color-border-burger-menu)] xl:border-0">
       <div class="xl:hidden w-full flex flex-row justify-between items-center" id="burgerMenu">
         <div class="font-mono text-2xl text-[var(--color-text)] ml-5">
           Adnan Hamdan
         </div>
-        <button
-          class="p-3 w-15 text-lg text-[var(--color-border-burger-menu)]">
+        <button class="p-3 w-15 text-lg text-[var(--color-border-burger-menu)]">
           ☰
         </button>
-
       </div>
 
       <nav id="sideMenu"
@@ -31,13 +29,15 @@
         </div>
 
         <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:bg-[var(--color-highlight)]"
-          href="/">Hello world</a>
+          href="#home">Home</a>
         <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:bg-[var(--color-highlight)]"
-          href="/">About</a>
+          href="#about">About</a>
         <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:bg-[var(--color-highlight)]"
-          href="/">Qqqqqqq</a>
+          href="#projects">Projects</a>
         <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:bg-[var(--color-highlight)]"
-          href="/">Ppppppp</a>
+          href="#skills">Skills</a>
+        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:bg-[var(--color-highlight)]"
+          href="#contact">Contact</a>
         <div class="xl:hidden p-4 bg-[var(--color-secondary)] border-2 --color-border-burger-menu" id="switcher-phone">
 
         </div>
@@ -53,15 +53,85 @@
       <div class="hidden xl:block xl:p-3 text-xl bg-[var(--color-secondary)]" id="switcher-desktop">
 
       </div>
+
+    </div>
+  </div>
+
+  <!--
+      a) Hero Section (Home)
+      Your first impression:
+      - Full name + short title (e.g., Software Developer, CS Graduate)
+      - A brief tagline (e.g., "Building efficient, scalable web apps")
+      - Professional photo or clean avatar
+      - Buttons: “View Projects” / “Download Resume”
+  -->
+  <div id="home" class="w-full h-auto xl:p-10 p-4 flex justify-center">
+    <div class="xl:w-6xl xl:flex xl:flex-row xl:justify-between">
+      <div class="xl:flex xl:flex-col xl:p-4 xl:w-3/4">
+        hello
+        <button>1</button>
+        <button>2</button>
+      </div>
+
+      <div class="xl:flex xl:flex-col xl:p-4 custom-font-family xl:w-1/4 text-[var(--color-text)]">
+        <div class="animated-border">
+          <div class="xl:h-100 flex items-center justify-center text-8xl font-bold custom-background">
+            AH
+          </div>
+        </div>
+
+
+      </div>
     </div>
 
-
-    <!-- 
-    <div id="footer" class="mt-1000">
-      Footer
-    </div> -->
-
   </div>
+
+  <!--
+    b) About Section
+    Short biography (1–2 paragraphs):
+      - Education (degree, university, graduation year)
+      - Career goals (e.g., software engineering, cybersecurity, AI)
+  -->
+  <div id="about" class="w-full h-auto xl:p-7 p-4">
+    About
+  </div>
+
+  <!--
+    c) Showcase 3–6 projects. Each should have:
+      - Title + screenshot
+      - Short description
+      - Tech stack used
+      - Links (GitHub and live demo if available)
+  -->
+  <div id="projects" class="w-full h-auto xl:p-7 p-4">
+    Projects
+  </div>
+
+  <!--
+    d) Skills Section
+    1- Split into technical and soft skills:
+      - Technical: Languages, frameworks, tools
+      - Soft: Problem-solving, teamwork, adaptability
+
+    2- Courses Section (Optional but recommended for graduates)
+      - As we discussed — list core, relevant courses grouped by category.
+  -->
+  <div id="skills" class="w-full h-auto xl:p-7 p-4">
+    Technologies
+  </div>
+
+  <!--
+  f) Contact Section (Footer)
+    - Email
+    - LinkedIn
+    - GitHub / Portfolio links
+    - Resume download link
+    - Optional: Small form for direct messages
+  -->
+  <div id="contact" class="w-full h-auto xl:p-7 p-4">
+    Contact
+  </div>
+
   <script type="module" src="/src/main.js"></script>
 </body>
 
