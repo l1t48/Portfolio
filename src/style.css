@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import 'hamburgers/dist/hamburgers.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* ================================
    Default (Light Theme)
@@ -17,9 +18,13 @@
   --color-border-color: black;
   --color-border-fade: #f59e0b;
   /* --bg-gradient: linear-gradient(135deg, #f3e8ff, #d8b4fe, #c4b5fd); */
---bg-gradient: linear-gradient(
+  --bg-gradient: linear-gradient(
   135deg, #f3e8ff,#e8d5ff,#d8b4fe, #c9a7fd);
-
+  --color-card-title-text: var(--color-slate-600);
+  --color-card-secondry-title: var(--color-slate-800);
+  --color-card-text-content: var(--color-slate-600);
+  --color-text-theme-switcher-hover:#e5e7eb ;
+  --color-bg-theme-switcher-hover: #c084fc;
 }
 
 /* ================================
@@ -38,8 +43,11 @@
   --color-border-color: white;
   --color-border-fade: #c084fc;
   --bg-gradient: linear-gradient(135deg, #1e1b2f, #4c3c75, #6b5bbd);
-
-
+  --color-card-title-text: var(--color-white-600);  
+  --color-card-secondry-title: var(--color-white-800);
+  --color-card-text-content: var(--color-white-600);
+  --color-text-theme-switcher-hover: #181818;
+  --color-bg-theme-switcher-hover: #f59e0b;
 }
 
 /* 1) Make the angle variable smoothly animatable */

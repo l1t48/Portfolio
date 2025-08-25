@@ -28,18 +28,27 @@
           <button id="closeMenu" class="text-xl font-bold text-[var(--color-border-burger-menu)]">X</button>
         </div>
 
-        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:bg-[var(--color-highlight)]"
+        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)]"
           href="#home">Home</a>
-        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:bg-[var(--color-highlight)]"
+        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)]"
           href="#about">About</a>
-        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:bg-[var(--color-highlight)]"
+        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)]"
           href="#projects">Projects</a>
-        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:bg-[var(--color-highlight)]"
+        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)]"
           href="#skills">Skills</a>
-        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:bg-[var(--color-highlight)]"
+        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)]"
           href="#contact">Contact</a>
-        <div class="xl:hidden p-4 bg-[var(--color-secondary)] border-2 --color-border-burger-menu" id="switcher-phone">
+        <div class="xl:hidden p-3" id="switcher-phone">
+          <button id="ThemeSwitcherPhone"
+            class="flex items-center gap-2 px-4 py-2 rounded-md bg-[var(--color-border-color)] text-[var(--color-primary)] transition-colors duration-300 relative overflow-hidden">
 
+            <span class="flex items-center gap-2 transition-transform duration-300 translate-x-0" id="iconWrapperPhone">
+              <i class="bi bi-sun-fill" id="sunIconPhone"></i>
+              Toggle Theme
+              <i class="bi bi-moon-stars-fill hidden" id="moonIconPhone"></i>
+            </span>
+
+          </button>
         </div>
       </nav>
 
@@ -50,9 +59,21 @@
         Adnan Hamdan
       </div>
 
-      <div class="hidden xl:block xl:p-3 text-xl bg-[var(--color-secondary)]" id="switcher-desktop">
+      <div class="hidden xl:block xl:p-3 text-xl" id="switcher-desktop">
+        <button id="ThemeSwitcherDesktop"
+          class="flex items-center gap-2 px-4 py-2 rounded-md hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)] bg-[var(--color-border-color)] text-[var(--color-primary)] transition-colors duration-300 relative overflow-hidden">
 
+          <!-- Icon wrapper for animation -->
+          <span class="flex items-center gap-2 transition-transform duration-300 translate-x-0" id="iconWrapperDesktop">
+            <i class="bi bi-sun-fill" id="sunIconDesktop"></i>
+            Toggle Theme
+            <i class="bi bi-moon-stars-fill hidden" id="moonIconDesktop"></i>
+          </span>
+
+        </button>
       </div>
+
+
 
     </div>
   </div>
@@ -65,21 +86,34 @@
       - Professional photo or clean avatar
       - Buttons: “View Projects” / “Download Resume”
   -->
-  <div id="home" class="w-full h-auto xl:p-10 p-4 flex justify-center">
-    <div class="xl:w-6xl xl:flex xl:flex-row xl:justify-between">
-      <div class="xl:flex xl:flex-col xl:p-4 xl:w-3/4">
-        hello
-        <button>1</button>
-        <button>2</button>
+  <div id="home" class="w-full h-auto xl:p-10 p-4 xl:flex xl:justify-center">
+    <div class="xl:w-6xl xl:flex xl:flex-row xl:justify-between flex flex-col-reverse">
+      <div class="xl:flex xl:flex-col p-4 xl:w-3/4 border-2 border-gray-300 shadow-lg xl:mt-0 mt-5">
+        <div class="w-full p-1 h-auto border-b-1 border-gray-300 flex flex-row justify-between">
+          <h1 class="text-lg text-[var(--color-card-title-text)]">Hero section</h1>
+          <i class="bi bi-globe text-lg text-[var(--color-card-title-text)]"></i>
+        </div>
+        <div
+          class="w-full h-auto p-1 xl:mt-5 xl:h-auto text-[var(--color-card-secondry-title)] font-semibold leading-tight">
+          <h1 class="text-2xl ">Adnan Hamdan – B.Sc. in Computer Science</h1>
+          <p class="text-lg text-gray-500">Full-Stack Developer | Cybersecurity Enthusiast</p>
+          <p class="text-sm text-gray-400">6+ years of academic experience in web, mobile, and desktop development.</p>
+          <p class="text-[var(--color-card-text-content)] mt-3">
+            A recently graduated Computer Science B.Sc. with over 6 years of academic and project-based programming
+            experience, starting from high school through university. Skilled in front-end, back-end, and full-stack web
+            development, as well as mobile and desktop application development. Possess a solid foundation in TUI- and
+            system-based programming using low-level languages such as C, and a strong grasp of network fundamentals and
+            cybersecurity principles. Additionally, I have a hobbyist interest in penetration testing. Eager to apply my
+            skills to real-world projects and continue growing as a software developer.
+          </p>
+        </div>
       </div>
-
-      <div class="xl:flex xl:flex-col xl:p-4 custom-font-family xl:w-1/4 text-[var(--color-text)]">
+      <div class="xl:flex xl:flex-col xl:ml-5 custom-font-family xl:w-1/4 text-[var(--color-text)]">
         <div class="animated-border">
-          <div class="xl:h-100 flex items-center justify-center text-8xl font-bold custom-background">
+          <div class="xl:h-100 h-100 w-full flex items-center justify-center text-8xl font-bold custom-background">
             AH
           </div>
         </div>
-
 
       </div>
     </div>

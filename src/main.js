@@ -2,27 +2,39 @@ import './style.css'
 
 'use strict';
 
-const ThemeSwitcherDesktop = document.createElement("button");
-ThemeSwitcherDesktop.setAttribute("id", "ThemeSwitcherDesktop");
-ThemeSwitcherDesktop.innerText = "Toggle Theme";
-
-const ThemeSwitcherPhone = document.createElement("button");
-ThemeSwitcherPhone.setAttribute("id", "ThemeSwitcherPhone");
-ThemeSwitcherPhone.innerText = "Toggle Theme";
-
-
 const html = document.documentElement;
-document.getElementById("switcher-desktop").appendChild(ThemeSwitcherDesktop);
 
-document.getElementById("ThemeSwitcherDesktop").addEventListener( "click", ()=>{
-    html.classList.toggle("dark")
-});
+// Desktop elements
+const themeBtnDesktop = document.getElementById("ThemeSwitcherDesktop");
+const sunDesktop = document.getElementById("sunIconDesktop");
+const moonDesktop = document.getElementById("moonIconDesktop");
+const iconWrapperDesktop = document.getElementById("iconWrapperDesktop");
 
-document.getElementById("switcher-phone").appendChild(ThemeSwitcherPhone);
+// Phone elements
+const themeBtnPhone = document.getElementById("ThemeSwitcherPhone");
+const sunPhone = document.getElementById("sunIconPhone");
+const moonPhone = document.getElementById("moonIconPhone");
+const iconWrapperPhone = document.getElementById("iconWrapperPhone");
 
-document.getElementById("ThemeSwitcherPhone").addEventListener( "click", ()=>{
-    html.classList.toggle("dark")
-});
+function toggleTheme(sunIcon, moonIcon, wrapper) {
+  html.classList.toggle("dark");
+
+  // Toggle icons
+  sunIcon.classList.toggle("hidden");
+  moonIcon.classList.toggle("hidden");
+
+  // Toggle slide effect
+  if (wrapper.classList.contains("translate-x-0")) {
+    wrapper.classList.replace("translate-x-0", "translate-x-2");
+  } else {
+    wrapper.classList.replace("translate-x-2", "translate-x-0");
+  }
+}
+
+// Event listeners
+themeBtnDesktop.addEventListener("click", () => toggleTheme(sunDesktop, moonDesktop, iconWrapperDesktop));
+themeBtnPhone.addEventListener("click", () => toggleTheme(sunPhone, moonPhone, iconWrapperPhone));
+
 
 const links = document.querySelectorAll("nav a");
 
