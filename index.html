@@ -28,15 +28,20 @@
           <button id="closeMenu" class="text-xl font-bold text-[var(--color-border-burger-menu)]">X</button>
         </div>
 
-        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)]"
+        <a class="nav-link block p-4 xl:p-2 xl:rounded-sm hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)] xl:transform xl:transition-transform xl:duration-300 xl:ease-in-out 
+          xl:hover:scale-110"
           href="#home">Home</a>
-        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)]"
+        <a class="nav-link block p-4 xl:p-2 xl:rounded-sm hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)] xl:transform xl:transition-transform xl:duration-300 xl:ease-in-out 
+          xl:hover:scale-110"
           href="#about">About</a>
-        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)]"
+        <a class="nav-link block p-4 xl:p-2 xl:rounded-sm hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)] xl:transform xl:transition-transform xl:duration-300 ease-in-out 
+          xl:hover:scale-110"
           href="#projects">Projects</a>
-        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)]"
+        <a class="block nav-link p-4 xl:p-2 xl:rounded-sm hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)] xl:transform xl:transition-transform xl:duration-300 ease-in-out 
+          xl:hover:scale-110"
           href="#skills">Skills</a>
-        <a class="block p-4 xl:p-2 xl:rounded-sm xl:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)]"
+        <a class="block nav-link p-4 xl:p-2 xl:rounded-sm hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)] xl:transform xl:transition-transform xl:duration-300 ease-in-out 
+          xl:hover:scale-110"
           href="#contact">Contact</a>
         <div class="xl:hidden p-3" id="switcher-phone">
           <button id="ThemeSwitcherPhone"
@@ -87,15 +92,15 @@
       - Buttons: “View Projects” / “Download Resume”
   -->
   <div id="home" class="w-full h-auto xl:p-10 p-4 xl:flex xl:justify-center">
-    <div class="xl:w-6xl xl:flex xl:flex-row xl:justify-between flex flex-col-reverse">
+    <div class="xl:w-6xl xl:flex xl:flex-row xl:justify-between flex flex-col-reverse animate__animated animate__backInLeft animate__slower">
       <div class="xl:flex xl:flex-col p-4 xl:w-3/4 border-2 border-gray-300 shadow-lg xl:mt-0 mt-5">
         <div class="w-full p-1 h-auto border-b-1 border-gray-300 flex flex-row justify-between">
-          <h1 class="text-lg text-[var(--color-card-title-text)]">Hero section</h1>
-          <i class="bi bi-globe text-lg text-[var(--color-card-title-text)]"></i>
+          <h1 class="text-lg text-[var(--color-card-title-text)]">Introduction</h1>
+          <i class="bi bi-linkedin text-lg text-[var(--color-card-title-text)]"></i>
         </div>
         <div
-          class="w-full h-auto p-1 xl:mt-5 xl:h-auto text-[var(--color-card-secondry-title)] font-semibold leading-tight">
-          <h1 class="text-2xl ">Adnan Hamdan – B.Sc. in Computer Science</h1>
+          class="w-full h-auto p-1 xl:mt-5 mt-3 xl:h-auto text-[var(--color-card-secondry-title)] font-semibold leading-tight">
+          <h1 class="text-2xl">Adnan Hamdan – B.Sc. in Computer Science</h1>
           <p class="text-lg text-gray-500">Full-Stack Developer | Cybersecurity Enthusiast</p>
           <p class="text-sm text-gray-400">6+ years of academic experience in web, mobile, and desktop development.</p>
           <p class="text-[var(--color-card-text-content)] mt-3">
@@ -126,8 +131,43 @@
       - Education (degree, university, graduation year)
       - Career goals (e.g., software engineering, cybersecurity, AI)
   -->
-  <div id="about" class="w-full h-auto xl:p-7 p-4">
-    About
+  <div id="about" class="w-full h-auto xl:p-4 text-[var(--color-card-secondry-title)] font-semibold leading-tight flex  justify-center">
+    <div class="xl:w-5/6 w-[92%] h-auto xl:p5 border-2 border-gray-300 shadow-lg animate-on-scroll">
+      <div class="xl:mt-0 p-5 flex xl:flex xl:flex-row xl:justify-evenly items-center justify-evenly border-b-1 [@media(max-width:380px)]:justify-center border-gray-300">
+        <button id="Education" class="text-[var(--color-text)] hover:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] xl:w-1/4 p-3 transform transition-transform duration-300 ease-in-out 
+          hover:scale-110 rounded-sm">Education</button>
+        <p>|</p>
+        <button id="CareerGoals" class="text-[var(--color-text)]  hover:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] xl:w-1/4 p-3 whitespace-nowrap transform transition-transform duration-300 ease-in-out 
+          hover:scale-110 rounded-sm">Career Goals</button>
+        <p>|</p>
+        <button id="Strengths_Experience" class="text-[var(--color-text)] hover:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] xl:w-1/4 p-3 transform transition-transform duration-300 ease-in-out 
+          hover:scale-110 rounded-sm">Strengths</button>
+      </div>
+
+      <div id="content-container-about" class="mt-5 p-5">
+        <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Education</h1>
+        <div class="mt-3">
+          <p class="text-lg">Karlstad University, Karlstad - B.Sc. in Computer Science</p>
+          <p class="text-sm text-[var(--color-card-text-content)] italic mt-2">Aug 2022 – June 2025 (completed; pending
+            final statistics/math exam)</p>
+        </div>
+
+        <br>
+
+        <div>
+          <p class="text-lg">NTI High School, Karlstad - Information and Media Technology specialization</p>
+          <p class="text-sm text-[var(--color-card-text-content)] italic mt-2">Aug 2019 – June 2022</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- <div class="border-2 border-gray-300 shadow-lg xl:mt-0 p-5">
+      <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Strengths / Experience</h1>
+    </div> -->
+
+
   </div>
 
   <!--
@@ -137,7 +177,7 @@
       - Tech stack used
       - Links (GitHub and live demo if available)
   -->
-  <div id="projects" class="w-full h-auto xl:p-7 p-4">
+  <div id="projects" class="w-full xl:h-auto h-100 xl:p-7 p-4">
     Projects
   </div>
 
@@ -150,7 +190,7 @@
     2- Courses Section (Optional but recommended for graduates)
       - As we discussed — list core, relevant courses grouped by category.
   -->
-  <div id="skills" class="w-full h-auto xl:p-7 p-4">
+  <div id="skills" class="w-full xl:h-auto h-100 xl:p-7 p-4">
     Technologies
   </div>
 
@@ -167,6 +207,7 @@
   </div>
 
   <script type="module" src="/src/main.js"></script>
+
 </body>
 
 </html>

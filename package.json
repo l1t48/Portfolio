@@ -14,8 +14,9 @@
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.12",
     "@tailwindcss/vite": "^4.1.12",
+    "animate.css": "^4.1.1",
     "bootstrap-icons": "^1.13.1",
-    "hamburgers": "^1.2.1",
-    "tailwindcss": "^4.1.12"
+    "tailwindcss": "^4.1.12",
+    "tailwindcss-animated": "^2.0.0"
   }
 }

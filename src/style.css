@@ -1,6 +1,8 @@
 @import "tailwindcss";
-@import 'hamburgers/dist/hamburgers.min.css';
 @import 'bootstrap-icons/font/bootstrap-icons.css';
+@import "tailwindcss";
+@import "tailwindcss-animated";
+@import 'animate.css';
 
 /* ================================
    Default (Light Theme)
