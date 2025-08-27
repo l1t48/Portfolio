@@ -217,4 +217,9 @@ window.addEventListener("scroll", () => {
   });
 });
 
+const bgText = document.querySelector('.background-text');
+bgText.innerHTML = bgText.textContent
+  .split('')
+  .map((char, i) => `<span style="animation-delay:${i * 0.2}s">${char}</span>`)
+  .join('');
 
