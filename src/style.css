@@ -8,7 +8,7 @@
    Default (Light Theme)
    ================================ */
 :root {
-  --color-primary: #f59e0b;        /* Primary accent color - gold, for buttons, highlights, or key actions */
+  --color-primary: #c084fc;      /* Primary accent color - gold, for buttons, highlights, or key actions */
   --color-secondary: #a855f7;      /* Secondary accent - purple, for secondary buttons or UI elements */
   --color-highlight: #22d3ee;      /* Highlight color - cyan, for links, hover states, or callouts */
   --color-highlight-2: #84cc16;    /* Secondary highlight - lime green, for success indicators or subtle accents */
@@ -18,7 +18,7 @@
   --color-nav: #e5e7eb;            /* Light Gray - navigation bar background */
   --color-border-burger-menu: black;
   --color-border-color: black;
-  --color-border-fade: #f59e0b;
+  --color-border-fade: #b061ff;
   /* --bg-gradient: linear-gradient(135deg, #f3e8ff, #d8b4fe, #c4b5fd); */
   --bg-gradient: linear-gradient(
   135deg, #f3e8ff,#e8d5ff,#d8b4fe, #c9a7fd);
@@ -37,7 +37,7 @@
    Dark Theme
    ================================ */
 .dark {
-  --color-primary: #c084fc;        /* Primary accent - purple, replaces gold in dark mode for softer contrast */
+  --color-primary: #f59e0b;          /* Primary accent - purple, replaces gold in dark mode for softer contrast */
   --color-secondary: #fbbf24;      /* Secondary accent - gold, reversed role for emphasis in dark theme */
   --color-highlight: #bef264;      /* Highlight - lime green, pops against dark backgrounds */
   --color-highlight-2: #2dd4bf;    /* Secondary highlight - cyan, still for links or hover states */
@@ -47,7 +47,7 @@
   --color-nav: #181818;            /* Slightly lighter black - for navigation bar background */
   --color-border-burger-menu: white;
   --color-border-color: white;
-  --color-border-fade: #c084fc;
+  --color-border-fade: #f59e0b;
   --bg-gradient: linear-gradient(135deg, #1e1b2f, #4c3c75, #6b5bbd);
   --color-card-title-text: var(--color-white-600);  
   --color-card-secondry-title: var(--color-white-800);
@@ -76,11 +76,11 @@
   /* Base color = black; highlight = white (change as you like) */
   border-image: conic-gradient(
     from var(--angle),
-    var(--color-border-color) 0deg 320deg,        /* mostly black */
-    var(--color-border-fade) 328deg,              /* soft fade-in (optional grey step) */
-    var(--color-border-fade) 336deg,             /* peak highlight color */
-    var(--color-border-fade) 344deg,              /* soft fade-out */
-    var(--color-border-color) 352deg 360deg       /* back to black */
+    var(--color-border-color) 0deg 320deg,       
+    var(--color-border-fade) 328deg,             
+    var(--color-border-fade) 336deg,             
+    var(--color-border-fade) 344deg,             
+    var(--color-border-color) 352deg 360deg      
   ) 1;
 
     box-shadow: 0 5px 7px -3px var(--color-secondary);
