@@ -8,7 +8,7 @@
 </head>
 
 <body class="bg-[var(--color-background)] text-[var(--color-text)]">
-  <div>
+  <div class="fixed top-0 z-50 w-full h-auto"> <!--there was no content in the class-->
     <div
       class="xl:w-full xl:h-20 bg-[var(--color-nav)] xl:p-7 xl:flex xl:items-center xl:justify-between xl:relative border-b-1 border-[var(--color-border-burger-menu)] xl:border-0">
       <div class="xl:hidden w-full flex flex-row justify-between items-center" id="burgerMenu">
@@ -28,7 +28,7 @@
           <button id="closeMenu" class="text-xl font-bold text-[var(--color-border-burger-menu)]">X</button>
         </div>
 
-        <a class="nav-link block p-4 xl:p-2 xl:rounded-sm hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)] xl:transform xl:transition-transform xl:duration-300 xl:ease-in-out 
+        <a class="nav-link text-[var(--color-text-theme-switcher-hover)] bg-[var(--color-bg-theme-switcher-hover)] block p-4 xl:p-2 xl:rounded-sm hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)] xl:transform xl:transition-transform xl:duration-300 xl:ease-in-out 
           xl:hover:scale-110"
           href="#home">Home</a>
         <a class="nav-link block p-4 xl:p-2 xl:rounded-sm hover:text-[var(--color-text-theme-switcher-hover)] hover:bg-[var(--color-bg-theme-switcher-hover)] xl:transform xl:transition-transform xl:duration-300 xl:ease-in-out 
@@ -83,6 +83,8 @@
     </div>
   </div>
 
+  <div class="h-20"></div>
+
   <!--
       a) Hero Section (Home)
       Your first impression:
@@ -134,13 +136,13 @@
   <div id="about" class="w-full h-auto xl:p-4 text-[var(--color-card-secondry-title)] font-semibold leading-tight flex  justify-center">
     <div class="xl:w-5/6 w-[92%] h-auto xl:p5 border-2 border-gray-300 shadow-lg animate-on-scroll">
       <div class="xl:mt-0 p-5 flex xl:flex xl:flex-row xl:justify-evenly items-center justify-evenly border-b-1 [@media(max-width:380px)]:justify-center border-gray-300">
-        <button id="Education" class="text-[var(--color-text)] hover:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] xl:w-1/4 p-3 transform transition-transform duration-300 ease-in-out 
+        <button id="Education" class="text-[var(--color-text)] bg-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-background)] xl:w-1/4 w-6xs p-3 [@media(max-width:450px)]:p-2  transform transition-transform duration-300 ease-in-out 
           hover:scale-110 rounded-sm">Education</button>
         <p>|</p>
-        <button id="CareerGoals" class="text-[var(--color-text)]  hover:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] xl:w-1/4 p-3 whitespace-nowrap transform transition-transform duration-300 ease-in-out 
+        <button id="CareerGoals" class="hover:bg-[var(--color-primary)] hover:text-[var(--color-background)] xl:w-1/4 w-6xs p-3 [@media(max-width:450px)]:p-2 whitespace-nowrap transform transition-transform duration-300 ease-in-out 
           hover:scale-110 rounded-sm">Career Goals</button>
         <p>|</p>
-        <button id="Strengths_Experience" class="text-[var(--color-text)] hover:bg-[var(--color-primary)] hover:text-[var(--color-text-theme-switcher-hover)] xl:w-1/4 p-3 transform transition-transform duration-300 ease-in-out 
+        <button id="Strengths_Experience" class="hover:bg-[var(--color-primary)] hover:text-[var(--color-background)] w-6xs xl:w-1/4 p-3 [@media(max-width:450px)]:p-2 transform transition-transform duration-300 ease-in-out 
           hover:scale-110 rounded-sm">Strengths</button>
       </div>
 
@@ -177,7 +179,7 @@
       - Tech stack used
       - Links (GitHub and live demo if available)
   -->
-  <div id="projects" class="w-full xl:h-auto h-100 xl:p-7 p-4">
+  <div id="projects" class="w-full xl:h-auto xl:p-7 p-4">
     Projects
   </div>
 
@@ -190,7 +192,7 @@
     2- Courses Section (Optional but recommended for graduates)
       - As we discussed — list core, relevant courses grouped by category.
   -->
-  <div id="skills" class="w-full xl:h-auto h-100 xl:p-7 p-4">
+  <div id="skills" class="w-full xl:h-auto xl:p-7 p-4">
     Technologies
   </div>
 
@@ -202,7 +204,7 @@
     - Resume download link
     - Optional: Small form for direct messages
   -->
-  <div id="contact" class="w-full h-auto xl:p-7 p-4">
+  <div id="contact" class="w-full xl:h-auto xl:p-7 p-4">
     Contact
   </div>
 

@@ -43,11 +43,14 @@ links.forEach(link => {
   link.addEventListener("click", (e) => {
     e.preventDefault(); // prevents page reload or jumping
     const target = link.getAttribute("href").slice(1); // e.g., "#section1"
+    links.forEach(l => l.classList.remove('text-[var(--color-text-theme-switcher-hover)]', 'bg-[var(--color-bg-theme-switcher-hover)]', 'bold'));
+    link.classList.add('text-[var(--color-text-theme-switcher-hover)]', 'bg-[var(--color-bg-theme-switcher-hover)]', 'bold');
 
     // Show/hide content or scroll to section
     document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
   });
 });
+
 
 const burgerBtn = document.querySelector('#burgerMenu button');
 const sideMenu = document.getElementById('sideMenu');
@@ -74,6 +77,12 @@ const Strengths_Experience = document.getElementById("Strengths_Experience");
 const CareerGoals = document.getElementById("CareerGoals");
 
 Education.addEventListener("click", () => {
+  const buttons = document.querySelectorAll("#Education, #CareerGoals, #Strengths_Experience");
+
+  buttons.forEach(button => {
+    button.classList.remove('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold') // Replace "active" with your class name
+  });
+
   content_container_about.innerHTML = ` 
     <div class="animate__animated animate__fadeIn animate__slower">
       <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Education</h1>
@@ -90,9 +99,17 @@ Education.addEventListener("click", () => {
       </div>
     </div>
     `
+  Education.classList.add('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold')
 });
 
 Strengths_Experience.addEventListener("click", () => {
+
+  const buttons = document.querySelectorAll("#Education, #CareerGoals, #Strengths_Experience");
+
+  buttons.forEach(button => { 
+    button.classList.remove('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold') // Replace "active" with your class name
+  });
+
   content_container_about.innerHTML = ` 
   <div class="animate__animated animate__fadeIn animate__slower">
     <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Strengths / Experience</h1> 
@@ -119,9 +136,17 @@ Strengths_Experience.addEventListener("click", () => {
     </ul>
 </div>
     `
+
+  Strengths_Experience.classList.add('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold')
 });
 
 CareerGoals.addEventListener("click", () => {
+
+  const buttons = document.querySelectorAll("#Education, #CareerGoals, #Strengths_Experience");
+
+  buttons.forEach(button => {
+    button.classList.remove('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold') // Replace "active" with your class name
+  });
   content_container_about.innerHTML = `
   <div class="animate__animated animate__fadeIn animate__slower">
       <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Career Goals</h1>
@@ -138,6 +163,8 @@ CareerGoals.addEventListener("click", () => {
       </ol>
   </div>
     `
+
+  CareerGoals.classList.add('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold')
 });
 
 const animatedElements = document.querySelectorAll('.animate-on-scroll');
@@ -156,29 +183,38 @@ const observer = new IntersectionObserver(entries => {
 animatedElements.forEach(el => observer.observe(el));
 
 
-// const sections = document.querySelectorAll('div[id]'); // or 'section' if using sections
-// const navLinks = document.querySelectorAll('.nav-link');
 
-// function updateActiveNav() {
-//   let current = sections[0].id; // default to first section
-//   const scrollPosition = window.scrollY + 50; // 50px buffer for any fixed header
+// Select all nav links
+const navLinks = document.querySelectorAll(".nav-link");
 
-//   sections.forEach(section => {
-//     if (section.offsetTop <= scrollPosition) {
-//       current = section.id; // last section whose top has passed the scroll position
-//     }
-//   });
+// Select all sections based on href targets
+const sections = Array.from(navLinks).map(link => {
+  const id = link.getAttribute("href").slice(1); // remove the #
+  return document.getElementById(id);
+});
 
+// Scroll event
+window.addEventListener("scroll", () => {
+  let currentId = "";
 
-//   navLinks.forEach(link => {
-//     link.classList.remove('text-[var(--color-text-theme-switcher-hover)]', 'bg-[var(--color-bg-theme-switcher-hover)]', 'bold'); // remove active styles
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const sectionTop = rect.top;
+    const sectionBottom = rect.bottom;
 
-//     if (link.getAttribute('href') === '#' + current) {
-//       link.classList.add('text-[var(--color-text-theme-switcher-hover)]', 'bg-[var(--color-bg-theme-switcher-hover)]', 'bold'); // highlight active link
-//     }
-//   });
-// }
+    // Check if section is visible in the viewport (adjust threshold if needed)
+    if (sectionTop < window.innerHeight / 2 && sectionBottom > window.innerHeight / 2) {
+      currentId = section.id;
+    }
+  });
 
-// window.addEventListener('scroll', updateActiveNav);
-// window.addEventListener('load', updateActiveNav);
+  // Update nav links
+  navLinks.forEach(link => {
+    link.classList.remove('text-[var(--color-text-theme-switcher-hover)]', 'bg-[var(--color-bg-theme-switcher-hover)]', 'bold');
+    if (link.getAttribute("href").slice(1) === currentId) {
+      link.classList.add('text-[var(--color-text-theme-switcher-hover)]', 'bg-[var(--color-bg-theme-switcher-hover)]', 'bold');
+    }
+  });
+});
+
 

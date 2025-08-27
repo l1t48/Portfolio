@@ -107,3 +107,9 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+.nav-link.active {
+  color: var(--color-text-theme-switcher-hover);
+  background-color: var(--color-bg-theme-switcher-hover);
+  font-weight: bold;
+}
