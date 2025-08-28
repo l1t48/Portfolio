@@ -31,6 +31,7 @@
   --color-primary-light-reverse: #f59f0b46; 
   --color-border-color-light: #d5affa35;
   --bg-gradient-brand: linear-gradient(270deg, #a955f732, rgba(255, 162, 0, 0), #a955f732);
+  --color-primary-switch-button: #f59e0b; 
 }
 
 /* ================================
@@ -58,6 +59,7 @@
   --color-primary-light-reverse: #c084fc5a;
   --color-border-color-light: hsla(38, 100%, 49%, 0.163);
   --bg-gradient-brand: linear-gradient(270deg, #ffa2002a, rgba(255, 162, 0, 0), #ffa20032);
+  --color-primary-switch-button: #c084fc; 
 }
 
 /* 1) Make the angle variable smoothly animatable */
