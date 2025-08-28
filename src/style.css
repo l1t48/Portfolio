@@ -130,7 +130,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'MedievalSharp', cursive;
-  font-size: 12vw;
+  font-size: 16vw; /*12vw*/
   z-index: -1;
   -webkit-text-stroke: 4px var(--color-border-color-light);
   /* -webkit-text-fill-color: var(--color-border-color-light); */
