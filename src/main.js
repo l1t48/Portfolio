@@ -167,20 +167,53 @@ CareerGoals.addEventListener("click", () => {
   CareerGoals.classList.add('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold')
 });
 
-const animatedElements = document.querySelectorAll('.animate-on-scroll');
+// const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate__animated', 'animate__fadeInUpBig');
-      observer.unobserve(entry.target); // optional: animate only once
-    }
-  });
-}, {
-  threshold: 0.2 // trigger when 20% of element is visible
+// const observer = new IntersectionObserver(entries => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add('animate__animated', 'animate__fadeInUpBig');
+//       observer.unobserve(entry.target); // optional: animate only once
+//     }
+//   });
+// }, {
+//   threshold: 0.2 // trigger when 20% of element is visible
+// });
+
+// animatedElements.forEach(el => observer.observe(el));
+
+// Reusable scroll animation function
+function animateOnScroll({ selector, animationClass, threshold = 0.2 } = {}) {
+  const animatedElements = document.querySelectorAll(selector);
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate__animated', animationClass);
+        observer.unobserve(entry.target); // animate only once
+      }
+    });
+  }, { threshold });
+
+  animatedElements.forEach(el => observer.observe(el));
+}
+
+// Use it multiple times for different animations
+animateOnScroll({
+  selector: '.fade-left',
+  animationClass: 'animate__fadeInLeft'
 });
 
-animatedElements.forEach(el => observer.observe(el));
+animateOnScroll({
+  selector: '.fade-in-up-big',
+  animationClass: 'animate__fadeInUpBig'
+});
+
+animateOnScroll({
+  selector: '.fade-right',
+  animationClass: 'animate__fadeInRight'
+});
+
 
 
 
@@ -223,3 +256,58 @@ bgText.innerHTML = bgText.textContent
   .map((char, i) => `<span style="animation-delay:${i * 0.2}s">${char}</span>`)
   .join('');
 
+
+const lines = document.querySelectorAll('.line');
+
+let activeIndex = -1; // index of the currently active section
+
+function updateDots() {
+  const scrollY = window.scrollY;
+  const windowHeight = window.innerHeight;
+
+  lines.forEach((line, index) => {
+    const dot = line.querySelector('.scroll-dot');
+    const rect = line.getBoundingClientRect();
+    const height = rect.height;
+    const dotHeight = dot.offsetHeight;
+
+    const lineTop = scrollY + rect.top;
+    const lineBottom = lineTop + height;
+
+    if (scrollY + windowHeight / 2 >= lineTop && scrollY + windowHeight / 2 <= lineBottom) {
+      // This is the current active section
+      activeIndex = index;
+    }
+  });
+
+  lines.forEach((line, index) => {
+    const dot = line.querySelector('.scroll-dot');
+    const dotHeight = dot.offsetHeight;
+
+    if (index < activeIndex) {
+      // Sections before the current one → dot at bottom
+      dot.style.top = `${line.offsetHeight - dotHeight}px`;
+      dot.style.opacity = '1';
+    } else if (index === activeIndex) {
+      // Current section → dot moves proportionally
+      const rect = line.getBoundingClientRect();
+      const height = rect.height;
+
+      let progress = (window.innerHeight - rect.top) / (window.innerHeight + height);
+      progress = Math.min(Math.max(progress, 0), 1);
+
+      const targetTop = progress * (height - dotHeight);
+
+      dot.style.top = `${targetTop}px`;
+      dot.style.opacity = '1';
+    } else {
+      // Sections after → dot at top and hidden
+      dot.style.top = `0px`;
+      dot.style.opacity = '0';
+    }
+  });
+}
+
+window.addEventListener('scroll', updateDots, { passive: true });
+window.addEventListener('resize', updateDots);
+updateDots();
