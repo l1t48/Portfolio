@@ -167,6 +167,64 @@ CareerGoals.addEventListener("click", () => {
   CareerGoals.classList.add('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold')
 });
 
+
+const content_container_skills = document.getElementById("content-container-skills");
+const Skills = document.getElementById("Skills");
+const Courses = document.getElementById("Courses");
+const Technologies = document.getElementById("Technologies");
+
+Skills.addEventListener("click", () => {
+  const buttons = document.querySelectorAll("#Skills, #Courses, #Technologies");
+
+  buttons.forEach(button => {
+    button.classList.remove('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold') // Replace "active" with your class name
+  });
+
+  content_container_skills.innerHTML = ` 
+    <div class="animate__animated animate__fadeIn animate__slower">
+      <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Skills</h1>
+    </div>
+    `
+  Skills.classList.add('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold')
+  console.log("Skills")
+});
+
+Courses.addEventListener("click", () => {
+
+  const buttons = document.querySelectorAll("#Skills, #Courses, #Technologies");
+
+  buttons.forEach(button => { 
+    button.classList.remove('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold') // Replace "active" with your class name
+  });
+
+  content_container_skills.innerHTML = ` 
+  <div class="animate__animated animate__fadeIn animate__slower">
+    <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Courses</h1> 
+</div>
+    `
+
+  Courses.classList.add('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold')
+  console.log("Courses")
+});
+
+Technologies.addEventListener("click", () => {
+
+  const buttons = document.querySelectorAll("#Skills, #Courses, #Technologies");
+
+  buttons.forEach(button => {
+    button.classList.remove('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold') // Replace "active" with your class name
+  });
+  content_container_skills.innerHTML = `
+  <div class="animate__animated animate__fadeIn animate__slower">
+      <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Technologies</h1>
+  </div>
+    `
+
+  Technologies.classList.add('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold')
+  console.log("Technologies")
+});
+
+
 // const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
 // const observer = new IntersectionObserver(entries => {
