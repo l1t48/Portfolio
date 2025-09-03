@@ -3,6 +3,8 @@
 @import "tailwindcss";
 @import "tailwindcss-animated";
 @import 'animate.css';
+@import "devicon/devicon.min.css";
+
 
 /* ================================
    Default (Light Theme)
@@ -40,7 +42,7 @@
 .dark {
   --color-primary: #f59e0b;          /* Primary accent - purple, replaces gold in dark mode for softer contrast */
   --color-secondary: #fbbf24;      /* Secondary accent - gold, reversed role for emphasis in dark theme */
-  --color-highlight: #bef264;      /* Highlight - lime green, pops against dark backgrounds */
+  --color-highlight: #a2ff00c2;      /* Highlight - lime green, pops against dark backgrounds */
   --color-highlight-2: #2dd4bf;    /* Secondary highlight - cyan, still for links or hover states */
   --color-background: #0f0f0f;     /* Background - almost black, main dark mode page background */
   --color-surface: #1f1f1f;        /* Surface - dark gray, for cards, modals, or container elements */
@@ -132,7 +134,8 @@
   font-family: 'MedievalSharp', cursive;
   font-size: 16vw; /*12vw*/
   z-index: -1;
-  -webkit-text-stroke: 4px var(--color-border-color-light);
+  -webkit-text-stroke: 1.5px var(--color-highlight);
+  /* -webkit-text-stroke: 4px var(--color-border-color-light); */
   /* -webkit-text-fill-color: var(--color-border-color-light); */
   color: var(--color-background);
   white-space: nowrap;

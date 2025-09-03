@@ -3,6 +3,59 @@ import './style.css';
 import 'animate.css';
 
 
+const skills = [
+  { category: "Project & Process Management", items: ["Agile methodologies", "Traditional methodologies"] },
+  { category: "Programming & Software Engineering", items: ["Object-Oriented Programming (OOP)", "GUI design principles", "API integration", "Front-end & Back-end development"] },
+  { category: "Computer Science Fundamentals", items: ["Discrete Mathematics", "CPU and Memory Management", "Operating System Fundamentals", "Data Structures and Algorithms (searching, sorting, pathfinding, optimization)", "Programming language theory", "Networking Fundamentals"] },
+  { category: "Testing & Evaluation", items: ["Manual testing", "Automated testing", "Usability testing", "Prototyping", "Evaluation methodologies"] },
+  { category: "Machine Learning & AI", items: ["ML fundamentals", "ML programming with Python"] },
+  { category: "Cybersecurity Knowledge", items: ["Cybersecurity fundamentals", "Network analysis", "Penetration testing principles"] },
+  { category: "Database Design", items: ["Database fundamentals", "Database schema design", "Triggers", "Optimization", "Non-relational databases"] },
+  { category: "Other Knowledge Areas", items: ["Data Ethics", "Team collaboration", "Mobile development (Android with Java)"] }
+];
+
+const technologies = [
+  { category: "Operating Systems & Environments", items: ["Linux", "Kali Linux", "Ubuntu", "Windows"] },
+  { category: "Programming Languages", items: ["C", "C# (.NET, Windows Forms, XML, API interaction)", "Java (Android, Windows game development)", "JavaScript (JS)", "PHP", "Python", "Assembly (MIPS)"] },
+  { category: "Web Development", items: ["HTML", "CSS", "Bootstrap", "Tailwind", "Node.js", "PHP (with MySQL via phpMyAdmin)", "REST APIs (creation and integration)", "React", "Vue.js"] },
+  { category: "Databases & Storage", items: ["MySQL (design, triggers, implementation)", "phpMyAdmin", "NoSQL", "Firebase", "MongoDB"] },
+  { category: "Cybersecurity & Networking", items: ["Wireshark", "Nmap", "Burp Suite", "OWASP ZAP", "Ettercap", "Metasploit Framework"] },
+  { category: "Development Tools & Version Control", items: ["GitHub", "GitLab"] }
+];
+
+function renderList(data) {
+  const container = document.getElementById("content-container-skills");
+  data.forEach(section => {
+    // Add category title
+    const title = document.createElement('h3');
+    title.textContent = section.category + ":";
+    title.classList.add("mt-5");
+    title.classList.add("animate__animated");
+    title.classList.add("animate__fadeIn");
+    title.classList.add("animate__slower");
+    container.appendChild(title);
+
+    // Add items
+    const ul = document.createElement('ul');
+    ul.classList.add("list-disc");
+    ul.classList.add("list-inside");
+    ul.classList.add("animate__animated");
+    ul.classList.add("animate__fadeIn");
+    ul.classList.add("animate__slower",  "pl-5", "text-[var(--color-card-title-text)]");
+    section.items.forEach(item => {
+      const li = document.createElement('li');
+      li.classList.add("mt-1");
+      li.textContent = item;
+      ul.appendChild(li);
+    });
+
+    container.appendChild(ul);
+  });
+}
+
+renderList(technologies);
+
+
 const html = document.documentElement;
 
 // Desktop elements
@@ -106,7 +159,7 @@ Strengths_Experience.addEventListener("click", () => {
 
   const buttons = document.querySelectorAll("#Education, #CareerGoals, #Strengths_Experience");
 
-  buttons.forEach(button => { 
+  buttons.forEach(button => {
     button.classList.remove('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold') // Replace "active" with your class name
   });
 
@@ -114,25 +167,25 @@ Strengths_Experience.addEventListener("click", () => {
   <div class="animate__animated animate__fadeIn animate__slower">
     <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Strengths / Experience</h1> 
     <ul class="list-disc list-inside text-[var(--color-card-text-content)] mt-5">
-      <li class="mt-1">6+ years programming in various programming languages</li>
-      <li class="mt-1">Full-stack web development</li>
-      <li class="mt-1">Desktop applications & GUI development (Windows Forms, .NET)</li>
-      <li class="mt-1">System-level programming & file handling (C, Java)</li>
-      <li class="mt-1">Networking fundamentals & cybersecurity basics</li>
-      <li class="mt-1">Penetration testing & vulnerability assessment (hobbyist/prototyping)</li>
-      <li class="mt-1">Digital forensics foundations</li>
-      <li class="mt-1">API integration & automation (REST, XML/JSON)</li>
-      <li class="mt-1">Cloud & database experience (Firebase, MongoDB, phpMyAdmin (MySQL))</li>
-      <li class="mt-1">Manual and automated testing (unit, integration, end-to-end)</li>
-      <li class="mt-1">Machine learning fundamentals & applied experimentation</li>
-      <li class="mt-1">User testing, prototyping, and evaluation</li>
-      <li class="mt-1">Software engineering principles & best practices</li>
-      <li class="mt-1">Data ethics knowledge</li>
-      <li class="mt-1">Data structures and algorithms</li>
-      <li class="mt-1">Operating systems fundamentals</li>
-      <li class="mt-1">Graphical user interfaces (GUI) development</li>
-      <li class="mt-1">General project management methodologies (Agile and traditional)</li>
-      <li class="mt-1">Discrete mathematics</li>
+      <li class="mt-3">6+ years programming in various programming languages</li>
+      <li class="mt-3">Full-stack web development</li>
+      <li class="mt-3">Desktop applications & GUI development (Windows Forms, .NET)</li>
+      <li class="mt-3">System-level programming & file handling (C, Java)</li>
+      <li class="mt-3">Networking fundamentals & cybersecurity basics</li>
+      <li class="mt-3">Penetration testing & vulnerability assessment (hobbyist/prototyping)</li>
+      <li class="mt-3">Digital forensics foundations</li>
+      <li class="mt-3">API integration & automation (REST, XML/JSON)</li>
+      <li class="mt-3">Cloud & database experience (Firebase, MongoDB, phpMyAdmin (MySQL))</li>
+      <li class="mt-3">Manual and automated testing (unit, integration, end-to-end)</li>
+      <li class="mt-3">Machine learning fundamentals & applied experimentation</li>
+      <li class="mt-3">User testing, prototyping, and evaluation</li>
+      <li class="mt-3">Software engineering principles & best practices</li>
+      <li class="mt-3">Data ethics knowledge</li>
+      <li class="mt-3">Data structures and algorithms</li>
+      <li class="mt-3">Operating systems fundamentals</li>
+      <li class="mt-3">Graphical user interfaces (GUI) development</li>
+      <li class="mt-3">General project management methodologies (Agile and traditional)</li>
+      <li class="mt-3">Discrete mathematics</li>
     </ul>
 </div>
     `
@@ -153,13 +206,13 @@ CareerGoals.addEventListener("click", () => {
       <h2 class="mt-3 text-[var(--color-card-secondry-title)]">After my graduation, I am committed to building a strong foundation for my professional journey by focusing on
         both practical industry experience and continued learning. My goals include:</h2>
       <ol class="list-decimal list-inside text-[var(--color-card-text-content)] ml-5 mt-5">
-        <li class="mt-1">Begin my career at a startup or innovative company where I can apply my skills in software development and gain real-world project experience.</li>
-        <li class="mt-1">Pursue specialized courses in cybersecurity to deepen my knowledge in areas such as penetration testing, digital forensics, and network security.</li>
-        <li class="mt-1">Advance my academic background with a Master’s degree in Cybersecurity, strengthening both my theoretical and practical expertise.</li>
-        <li class="mt-1">Continue self-learning by dedicating free time to exploring advanced topics in cybersecurity, programming languages, and system design.</li>
-        <li class="mt-1">Enhance my knowledge in software engineering by keeping up-to-date with modern tools, frameworks, and methodologies.</li>
-        <li class="mt-1">Develop a strong understanding of hardware management and system maintenance, ensuring a well-rounded technical profile.</li>
-        <li class="mt-1">Build personal projects and contribute to open-source communities to practice, collaborate, and share knowledge with other professionals.</li>
+        <li class="mt-3">Begin my career at a startup or innovative company where I can apply my skills in software development and gain real-world project experience.</li>
+        <li class="mt-3">Pursue specialized courses in cybersecurity to deepen my knowledge in areas such as penetration testing, digital forensics, and network security.</li>
+        <li class="mt-3">Advance my academic background with a Master’s degree in Cybersecurity, strengthening both my theoretical and practical expertise.</li>
+        <li class="mt-3">Continue self-learning by dedicating free time to exploring advanced topics in cybersecurity, programming languages, and system design.</li>
+        <li class="mt-3">Enhance my knowledge in software engineering by keeping up-to-date with modern tools, frameworks, and methodologies.</li>
+        <li class="mt-3">Develop a strong understanding of hardware management and system maintenance, ensuring a well-rounded technical profile.</li>
+        <li class="mt-3">Build personal projects and contribute to open-source communities to practice, collaborate, and share knowledge with other professionals.</li>
       </ol>
   </div>
     `
@@ -170,7 +223,6 @@ CareerGoals.addEventListener("click", () => {
 
 const content_container_skills = document.getElementById("content-container-skills");
 const Skills = document.getElementById("Skills");
-const Courses = document.getElementById("Courses");
 const Technologies = document.getElementById("Technologies");
 
 Skills.addEventListener("click", () => {
@@ -185,27 +237,11 @@ Skills.addEventListener("click", () => {
       <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Skills</h1>
     </div>
     `
+  renderList(skills);
   Skills.classList.add('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold')
   console.log("Skills")
 });
 
-Courses.addEventListener("click", () => {
-
-  const buttons = document.querySelectorAll("#Skills, #Courses, #Technologies");
-
-  buttons.forEach(button => { 
-    button.classList.remove('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold') // Replace "active" with your class name
-  });
-
-  content_container_skills.innerHTML = ` 
-  <div class="animate__animated animate__fadeIn animate__slower">
-    <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Courses</h1> 
-</div>
-    `
-
-  Courses.classList.add('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold')
-  console.log("Courses")
-});
 
 Technologies.addEventListener("click", () => {
 
@@ -219,6 +255,7 @@ Technologies.addEventListener("click", () => {
       <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Technologies</h1>
   </div>
     `
+  renderList(technologies);
 
   Technologies.classList.add('bg-[var(--color-primary)]', 'text-[var(--color-text)]', 'bold')
   console.log("Technologies")
