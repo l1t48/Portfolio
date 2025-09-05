@@ -5,6 +5,13 @@
 @import 'animate.css';
 @import "devicon/devicon.min.css";
 
+* { 
+  box-sizing: border-box; 
+}
+
+button, a{
+  cursor: pointer;
+}
 
 /* ================================
    Default (Light Theme)
@@ -71,6 +78,7 @@
   inherits: false;
 }
 
+
 /* 2) Your animated border */
 .animated-border {
   /* your layout classes (Tailwind etc.) can stay alongside this class */
@@ -134,7 +142,7 @@
   font-family: 'MedievalSharp', cursive;
   font-size: 16vw; /*12vw*/
   z-index: -1;
-  -webkit-text-stroke: 1.5px var(--color-highlight);
+  -webkit-text-stroke: 1.5px var(--color-primary);
   /* -webkit-text-stroke: 4px var(--color-border-color-light); */
   /* -webkit-text-fill-color: var(--color-border-color-light); */
   color: var(--color-background);
@@ -171,43 +179,36 @@
   }
 }
 
-.scroll-dot {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
+
+.line {
+  position: relative; /* ensure pseudo-element is positioned relative to line */
+}
+
+.line::after {
+  content: '';                /* must exist to render */
+  position: absolute;          /* stay inside line */
+  left: 0;                     /* horizontal alignment */
+  width: 100%;                 /* full width of the line */
+  height: 12px;                  
   background: var(--color-highlight, #3b82f6);
-  transition: top 0.1s linear, opacity 0.2s ease;
-  opacity: 0;
+  transform: translateY(0);    /* will be updated dynamically */
+  transition: transform 0.1s linear; /* smooth movement */
+  transform: var(--dot-transform, translateY(0));
 }
 
 
 
-
-
-/* body {
-    margin: 0;
-    position: relative;
-    background: var(--color-background);
-    font-family: 'Times New Roman', serif;
-    overflow-x: hidden;
+/* .line {
+  position: relative; 
 }
 
-
-body::before {
-    content: "Adnan Hamdan";
-    position: fixed;
-    top: 50%;
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    font-family: 'MedievalSharp', cursive;
-    font-size: 12vw;
-    color: var(--color-background);
-    white-space: nowrap;
-    z-index: -1;
-    -webkit-text-stroke: 2px var(--color-border-color-light); 
-    -webkit-text-fill-color: var(--color-border-color-light);
+.line::after {
+  content: '';           
+  position: absolute;    
+  width: 100%;          
+  top: 0;               
+  left: 0;
+  background: var(--color-highlight, #3b82f6);
+  height: var(--progress, 0%); 
+  transition: height 0.3s linear;
 } */
-

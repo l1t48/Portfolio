@@ -28,7 +28,7 @@ function renderList(data) {
   data.forEach(section => {
     // Add category title
     const title = document.createElement('h3');
-    title.textContent = section.category + ":";
+    title.textContent =  section.category + ":";
     title.classList.add("mt-5");
     title.classList.add("animate__animated");
     title.classList.add("animate__fadeIn");
@@ -41,7 +41,7 @@ function renderList(data) {
     ul.classList.add("list-inside");
     ul.classList.add("animate__animated");
     ul.classList.add("animate__fadeIn");
-    ul.classList.add("animate__slower",  "pl-5", "text-[var(--color-card-title-text)]");
+    ul.classList.add("animate__slower", "pl-5", "text-[var(--color-card-title-text)]");
     section.items.forEach(item => {
       const li = document.createElement('li');
       li.classList.add("mt-1");
@@ -138,7 +138,7 @@ Education.addEventListener("click", () => {
 
   content_container_about.innerHTML = ` 
     <div class="animate__animated animate__fadeIn animate__slower">
-      <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Education</h1>
+      <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300"><i class="bi bi-book"></i> Education</h1>
       <div class="mt-3">
         <p class="text-lg">Karlstad University, Karlstad - B.Sc. in Computer Science</p>
         <p class="text-sm text-[var(--color-card-text-content)] italic mt-2">Aug 2022 – June 2025 (completed; pending final statistics/math exam)</p>
@@ -165,7 +165,7 @@ Strengths_Experience.addEventListener("click", () => {
 
   content_container_about.innerHTML = ` 
   <div class="animate__animated animate__fadeIn animate__slower">
-    <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Strengths / Experience</h1> 
+    <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300"><i class="bi bi-chevron-double-up"></i> Strengths / Experience</h1> 
     <ul class="list-disc list-inside text-[var(--color-card-text-content)] mt-5">
       <li class="mt-3">6+ years programming in various programming languages</li>
       <li class="mt-3">Full-stack web development</li>
@@ -202,7 +202,7 @@ CareerGoals.addEventListener("click", () => {
   });
   content_container_about.innerHTML = `
   <div class="animate__animated animate__fadeIn animate__slower">
-      <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Career Goals</h1>
+      <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300"><i class="bi bi-stars"></i> Career Goals</h1>
       <h2 class="mt-3 text-[var(--color-card-secondry-title)]">After my graduation, I am committed to building a strong foundation for my professional journey by focusing on
         both practical industry experience and continued learning. My goals include:</h2>
       <ol class="list-decimal list-inside text-[var(--color-card-text-content)] ml-5 mt-5">
@@ -234,7 +234,7 @@ Skills.addEventListener("click", () => {
 
   content_container_skills.innerHTML = ` 
     <div class="animate__animated animate__fadeIn animate__slower">
-      <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Skills</h1>
+      <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300"><i class="bi bi-list-check"></i> Skills</h1>
     </div>
     `
   renderList(skills);
@@ -252,7 +252,7 @@ Technologies.addEventListener("click", () => {
   });
   content_container_skills.innerHTML = `
   <div class="animate__animated animate__fadeIn animate__slower">
-      <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300">Technologies</h1>
+      <h1 class="text-lg text-[var(--color-card-title-text)] border-b-1 border-gray-300"><i class="bi bi-check2-square"></i> Technologies</h1>
   </div>
     `
   renderList(technologies);
@@ -352,57 +352,60 @@ bgText.innerHTML = bgText.textContent
   .join('');
 
 
+
 const lines = document.querySelectorAll('.line');
 
-let activeIndex = -1; // index of the currently active section
+function updateLines() {
+  const mid = window.scrollY + window.innerHeight / 2;
 
-function updateDots() {
-  const scrollY = window.scrollY;
-  const windowHeight = window.innerHeight;
-
-  lines.forEach((line, index) => {
-    const dot = line.querySelector('.scroll-dot');
+  lines.forEach(line => {
     const rect = line.getBoundingClientRect();
-    const height = rect.height;
-    const dotHeight = dot.offsetHeight;
+    const topDoc = rect.top + window.scrollY;
+    const lineHeight = rect.height;
 
-    const lineTop = scrollY + rect.top;
-    const lineBottom = lineTop + height;
+    // Calculate scroll progress for this line
+    let progress = (mid - topDoc) / lineHeight;
+    progress = Math.min(Math.max(progress, 0), 1);
 
-    if (scrollY + windowHeight / 2 >= lineTop && scrollY + windowHeight / 2 <= lineBottom) {
-      // This is the current active section
-      activeIndex = index;
-    }
-  });
-
-  lines.forEach((line, index) => {
-    const dot = line.querySelector('.scroll-dot');
-    const dotHeight = dot.offsetHeight;
-
-    if (index < activeIndex) {
-      // Sections before the current one → dot at bottom
-      dot.style.top = `${line.offsetHeight - dotHeight}px`;
-      dot.style.opacity = '1';
-    } else if (index === activeIndex) {
-      // Current section → dot moves proportionally
-      const rect = line.getBoundingClientRect();
-      const height = rect.height;
-
-      let progress = (window.innerHeight - rect.top) / (window.innerHeight + height);
-      progress = Math.min(Math.max(progress, 0), 1);
-
-      const targetTop = progress * (height - dotHeight);
-
-      dot.style.top = `${targetTop}px`;
-      dot.style.opacity = '1';
-    } else {
-      // Sections after → dot at top and hidden
-      dot.style.top = `0px`;
-      dot.style.opacity = '0';
-    }
+    // Move pseudo-element using transform instead of top/height
+    const dotPosition = progress * (lineHeight - 12); // 4px = height of the pseudo-element
+    line.style.setProperty('--dot-transform', `translateY(${dotPosition}px)`);
   });
 }
 
-window.addEventListener('scroll', updateDots, { passive: true });
-window.addEventListener('resize', updateDots);
-updateDots();
+window.addEventListener('scroll', updateLines, { passive: true });
+window.addEventListener('resize', updateLines);
+window.addEventListener('load', updateLines);
+
+document.getElementById("downloadPDF").addEventListener("click", () => {
+  const link = document.createElement("a");
+  link.href = "pdf/CV-CS-EN.pdf";  // relative path
+  link.download = "CV-CS-EN.pdf";  // name for the download
+  link.click();
+});
+
+
+
+// const lines = document.querySelectorAll('.line');
+
+// function updateLines() {
+//   const mid = window.scrollY + window.innerHeight / 2;
+
+//   lines.forEach(line => {
+//     const rect = line.getBoundingClientRect();
+//     const topDoc = rect.top + window.scrollY;
+//     const lineHeight = rect.height;
+
+//     let progress = (mid - topDoc) / lineHeight;
+//     progress = Math.min(Math.max(progress, 0), 1);
+
+//     // set CSS variable
+//     line.style.setProperty('--progress', `${progress * 100}%`);
+//   });
+// }
+
+// window.addEventListener('scroll', updateLines, { passive: true });
+// window.addEventListener('resize', updateLines);
+// window.addEventListener('load', updateLines);
+
+
