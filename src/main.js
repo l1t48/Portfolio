@@ -2,7 +2,6 @@
 import './style.css';
 import 'animate.css';
 
-
 const skills = [
   { category: "Project & Process Management", items: ["Agile methodologies", "Traditional methodologies"] },
   { category: "Programming & Software Engineering", items: ["Object-Oriented Programming (OOP)", "GUI design principles", "API integration", "Front-end & Back-end development"] },
@@ -262,21 +261,6 @@ Technologies.addEventListener("click", () => {
 });
 
 
-// const animatedElements = document.querySelectorAll('.animate-on-scroll');
-
-// const observer = new IntersectionObserver(entries => {
-//   entries.forEach(entry => {
-//     if (entry.isIntersecting) {
-//       entry.target.classList.add('animate__animated', 'animate__fadeInUpBig');
-//       observer.unobserve(entry.target); // optional: animate only once
-//     }
-//   });
-// }, {
-//   threshold: 0.2 // trigger when 20% of element is visible
-// });
-
-// animatedElements.forEach(el => observer.observe(el));
-
 // Reusable scroll animation function
 function animateOnScroll({ selector, animationClass, threshold = 0.2 } = {}) {
   const animatedElements = document.querySelectorAll(selector);
@@ -379,33 +363,10 @@ window.addEventListener('load', updateLines);
 
 document.getElementById("downloadPDF").addEventListener("click", () => {
   const link = document.createElement("a");
-  link.href = "pdf/CV-CS-EN.pdf";  // relative path
-  link.download = "CV-CS-EN.pdf";  // name for the download
+  link.href = "pdf/CV-EN-CS-slutVersion.pdf";  // relative path
+  link.download = "CV-EN-CS-slutVersion.pdf";  // name for the download
   link.click();
 });
 
-
-
-// const lines = document.querySelectorAll('.line');
-
-// function updateLines() {
-//   const mid = window.scrollY + window.innerHeight / 2;
-
-//   lines.forEach(line => {
-//     const rect = line.getBoundingClientRect();
-//     const topDoc = rect.top + window.scrollY;
-//     const lineHeight = rect.height;
-
-//     let progress = (mid - topDoc) / lineHeight;
-//     progress = Math.min(Math.max(progress, 0), 1);
-
-//     // set CSS variable
-//     line.style.setProperty('--progress', `${progress * 100}%`);
-//   });
-// }
-
-// window.addEventListener('scroll', updateLines, { passive: true });
-// window.addEventListener('resize', updateLines);
-// window.addEventListener('load', updateLines);
 
 
